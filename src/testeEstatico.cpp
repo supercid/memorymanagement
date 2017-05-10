@@ -1,22 +1,22 @@
 #include <iostream>
 #include <stdlib.h>
-#include <sys/time.h>		// Nem todos os compiladores rodam esta biblioteca no WINDOWS
+#include <sys/time.h>
 #include <fstream>
 
 
 using namespace std;
 /*
 *	este programa mede o tempo de que o computador leva para atribuir um certo valor
-*	a um vetor dinamico grande.
+*	a um vetor estatico grande.
 */
 
 int main(){
 
-int tam = 1000;		   
-int cont = 0;		   
-double total = 0;	   
-double media ;		   
-double t1,t2;	   	   
+int tam = 1000;		// esta variavel contem o tamanho do vetor
+int cont = 0;		   // esta variavel sera usada para extrair um comportamento medio das medições
+double total = 0;	   // esta variavel armazenara os tempos que serao medidos
+double media ;		   // esta variavel contera o valor medio  medido
+double t1,t2;	   	// estas variaveis serao usadas para o calculo do tempo
 
 ofstream fout("tempoEstaticoLINUX.dat");
 
@@ -40,8 +40,8 @@ while(tam < 2000000){                                   // inicio do laco de inc
 		}   // fim do laco de incremento da variavel cont
 
 		media = total/50;                                    
-		cout << tam<< "\t"<< 1000*media<< endl;		//saida pelo terminal
-		fout << tam <<"   " << 1000*media<< endl;	//saida por arquivo
+		cout << tam<< "\t"<< 1000*media<< endl;
+		fout << tam <<"   " << 1000*media<< endl;
 		tam += 1000;	
 		total = 0;
 		cont = 0;

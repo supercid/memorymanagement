@@ -29,7 +29,7 @@ while(tam < 2000000){
 	}
 		media = total/50;                                    
 		cout << tam<< "\t"<< 1000*media<< endl;
-		fout << tam <<"," << 1000*media<< endl;
+		fout << tam <<"   " << 1000*media<< endl;
 		tam += 1000;	
 		total = 0;
 		cont = 0;
